@@ -18,6 +18,8 @@ class AddEditTableViewController: UITableViewController {
 
   //MARK: - Properties
   var emoji = Emoji()
+  var isEmoji = false
+  var isContainingOther = false
 
   //MARK: - ViewDidLoad
   override func viewDidLoad() {
@@ -31,6 +33,14 @@ class AddEditTableViewController: UITableViewController {
     nameTextField.text = emoji.name
     descriptionTextField.text = emoji.descriotion
     usageTextField.text = emoji.usage
+  }
+
+  func checkIsEmoji(){
+    guard let checkingText = symbolTextField.text else { return }
+    isEmoji = checkingText.unicodeScalars.allSatisfy({$0.properties.isEmoji})
+    print ("\(isEmoji)")
+    isContainingOther = checkingText.unicodeScalars.allSatisfy({!$0.properties.isEmoji})
+    print("\(isContainingOther)")
   }
 
   func saveEmoji() {
@@ -48,11 +58,15 @@ class AddEditTableViewController: UITableViewController {
   }
 
   @objc func textFieldDidChange(_ textField: UITextField){
-
     if symbolTextField.text!.isEmpty || nameTextField.text!.isEmpty || descriptionTextField.text!.isEmpty || usageTextField.text!.isEmpty {
       saveBarButton.isEnabled = false
     } else {
-      saveBarButton.isEnabled = true
+      checkIsEmoji()
+      if isEmoji && !isContainingOther {
+        saveBarButton.isEnabled = true
+      } else {
+        saveBarButton.isEnabled = false
+      }
     }
   }
 
