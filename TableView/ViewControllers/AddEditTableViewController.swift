@@ -28,14 +28,14 @@ class AddEditTableViewController: UITableViewController {
     updateUI()
   }
   //MARK: - Methods
-  func updateUI() {
+  private func updateUI() {
     symbolTextField.text = emoji.symbol
     nameTextField.text = emoji.name
     descriptionTextField.text = emoji.descriotion
     usageTextField.text = emoji.usage
   }
 
-  func checkIsEmoji(){
+  private func checkIsEmoji(){
     guard let checkingText = symbolTextField.text else { return }
     isEmoji = checkingText.unicodeScalars.allSatisfy({$0.properties.isEmoji})
     print ("\(isEmoji)")
@@ -43,7 +43,7 @@ class AddEditTableViewController: UITableViewController {
     print("\(isContainingOther)")
   }
 
-  func saveEmoji() {
+  private func saveEmoji() {
     emoji.symbol = symbolTextField.text ?? ""
     emoji.name = nameTextField.text ?? ""
     emoji.descriotion = descriptionTextField.text ?? ""
