@@ -16,6 +16,7 @@ The user has the ability to edit data in an already created cell.
 He can also create a new cell with a description . 
 Moreover, the possibility of saving the cell appears only after filling in all the rows. 
 In addition, a custom class has been implemented for the first textField, in which the user can use only the emoji keyboard.
+A check for the entered values has been added to the SYMBOL field, so the user can only use emojis.
 
 ![Screenshot004](https://github.com/ClearCut3000/TableView/blob/main/Screenshots/scr004.png?raw=true)
 ![Screenshot005](https://github.com/ClearCut3000/TableView/blob/main/Screenshots/scr005.png?raw=true)
