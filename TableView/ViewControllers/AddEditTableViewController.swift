@@ -14,6 +14,7 @@ class AddEditTableViewController: UITableViewController {
   @IBOutlet var nameTextField: UITextField!
   @IBOutlet var descriptionTextField: UITextField!
   @IBOutlet var usageTextField: UITextField!
+  @IBOutlet var saveBarButton: UIBarButtonItem!
 
   //MARK: - Properties
   var emoji = Emoji()
@@ -21,6 +22,7 @@ class AddEditTableViewController: UITableViewController {
   //MARK: - ViewDidLoad
   override func viewDidLoad() {
     super.viewDidLoad()
+    textFieldWarcher()
     updateUI()
   }
   //MARK: - Methods
@@ -36,6 +38,22 @@ class AddEditTableViewController: UITableViewController {
     emoji.name = nameTextField.text ?? ""
     emoji.descriotion = descriptionTextField.text ?? ""
     emoji.usage = usageTextField.text ?? ""
+  }
+
+  func textFieldWarcher(){
+    symbolTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+    nameTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+    descriptionTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+    usageTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+  }
+
+  @objc func textFieldDidChange(_ textField: UITextField){
+
+    if symbolTextField.text!.isEmpty || nameTextField.text!.isEmpty || descriptionTextField.text!.isEmpty || usageTextField.text!.isEmpty {
+      saveBarButton.isEnabled = false
+    } else {
+      saveBarButton.isEnabled = true
+    }
   }
 
   //MARK: - Navigation

@@ -98,7 +98,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="56.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please, enter emoji symbol here." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0y2-mj-tKI">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please, enter emoji symbol here." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0y2-mj-tKI" customClass="EmojiTextField" customModule="TableView" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="11" width="374" height="34.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -201,7 +201,7 @@
                                 <segue destination="zpq-v2-B5K" kind="unwind" unwindAction="unwind:" id="ctN-G0-nDN"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="k85-gq-ewG">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="save" id="k85-gq-ewG">
                             <connections>
                                 <segue destination="zpq-v2-B5K" kind="unwind" identifier="saveSegue" unwindAction="unwind:" id="NqR-x3-edY"/>
                             </connections>
@@ -210,6 +210,7 @@
                     <connections>
                         <outlet property="descriptionTextField" destination="O7r-SU-Ryg" id="Dey-BL-GwJ"/>
                         <outlet property="nameTextField" destination="NF3-dO-XdJ" id="ruC-wc-kG2"/>
+                        <outlet property="saveBarButton" destination="k85-gq-ewG" id="r0S-Cr-Txk"/>
                         <outlet property="symbolTextField" destination="0y2-mj-tKI" id="gQg-5r-DXp"/>
                         <outlet property="usageTextField" destination="b1x-rs-wFh" id="UKT-m5-yds"/>
                     </connections>

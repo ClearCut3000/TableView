@@ -17,6 +17,7 @@
 		361BA7A2273401E000568F79 /* AddEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361BA7A1273401DF00568F79 /* AddEditTableViewController.swift */; };
 		361BA7A52734055700568F79 /* CellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361BA7A42734055700568F79 /* CellManager.swift */; };
 		361BA7A927359D9100568F79 /* EmojiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361BA7A827359D9100568F79 /* EmojiCell.swift */; };
+		361BA7AB273D413A00568F79 /* EmojiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361BA7AA273D413A00568F79 /* EmojiTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		361BA7A1273401DF00568F79 /* AddEditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditTableViewController.swift; sourceTree = "<group>"; };
 		361BA7A42734055700568F79 /* CellManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellManager.swift; sourceTree = "<group>"; };
 		361BA7A827359D9100568F79 /* EmojiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCell.swift; sourceTree = "<group>"; };
+		361BA7AA273D413A00568F79 /* EmojiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			children = (
 				361BA79F273401AA00568F79 /* EmojiTableViewController.swift */,
 				361BA7A1273401DF00568F79 /* AddEditTableViewController.swift */,
+				361BA7AA273D413A00568F79 /* EmojiTextField.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				361BA7A927359D9100568F79 /* EmojiCell.swift in Sources */,
 				361BA7A52734055700568F79 /* CellManager.swift in Sources */,
 				361BA7862733FAC700568F79 /* AppDelegate.swift in Sources */,
+				361BA7AB273D413A00568F79 /* EmojiTextField.swift in Sources */,
 				361BA79B2733FB6700568F79 /* Emoji.swift in Sources */,
 				361BA7882733FAC700568F79 /* SceneDelegate.swift in Sources */,
 				361BA7A2273401E000568F79 /* AddEditTableViewController.swift in Sources */,
