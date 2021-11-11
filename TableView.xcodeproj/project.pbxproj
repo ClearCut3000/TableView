@@ -18,6 +18,7 @@
 		361BA7A52734055700568F79 /* CellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361BA7A42734055700568F79 /* CellManager.swift */; };
 		361BA7A927359D9100568F79 /* EmojiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361BA7A827359D9100568F79 /* EmojiCell.swift */; };
 		361BA7AB273D413A00568F79 /* EmojiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361BA7AA273D413A00568F79 /* EmojiTextField.swift */; };
+		361BA7AD273D615500568F79 /* Screenshots in Resources */ = {isa = PBXBuildFile; fileRef = 361BA7AC273D615500568F79 /* Screenshots */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		361BA7A42734055700568F79 /* CellManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellManager.swift; sourceTree = "<group>"; };
 		361BA7A827359D9100568F79 /* EmojiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCell.swift; sourceTree = "<group>"; };
 		361BA7AA273D413A00568F79 /* EmojiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTextField.swift; sourceTree = "<group>"; };
+		361BA7AC273D615500568F79 /* Screenshots */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Screenshots; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				361BA7872733FAC700568F79 /* SceneDelegate.swift */,
 				361BA78E2733FACE00568F79 /* Assets.xcassets */,
 				361BA7932733FACF00568F79 /* Info.plist */,
+				361BA7AC273D615500568F79 /* Screenshots */,
 			);
 			path = "Supported Files";
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				361BA7AD273D615500568F79 /* Screenshots in Resources */,
 				361BA7922733FACF00568F79 /* LaunchScreen.storyboard in Resources */,
 				361BA78F2733FACE00568F79 /* Assets.xcassets in Resources */,
 				361BA78D2733FAC700568F79 /* Main.storyboard in Resources */,
@@ -363,6 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CJ7JF497NG;
@@ -378,8 +383,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.TableView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.TableViewNik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -406,7 +412,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.TableView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.TableViewNik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

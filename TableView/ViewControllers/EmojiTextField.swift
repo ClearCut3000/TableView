@@ -27,7 +27,6 @@ class EmojiTextField: UITextField {
   }
   func commonInit() {
     NotificationCenter.default.addObserver(self, selector: #selector(inputModeDidChange), name: UITextInputMode.currentInputModeDidChangeNotification, object: nil)
-
   }
   @objc func inputModeDidChange(_ notification: Notification){
     guard isFirstResponder else {
