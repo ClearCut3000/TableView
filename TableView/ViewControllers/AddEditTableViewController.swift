@@ -28,13 +28,6 @@ class AddEditTableViewController: UITableViewController {
     updateUI()
   }
   //MARK: - Methods
-  private func updateUI() {
-    symbolTextField.text = emoji.symbol
-    nameTextField.text = emoji.name
-    descriptionTextField.text = emoji.descriotion
-    usageTextField.text = emoji.usage
-  }
-
   private func checkIsEmoji(){
     guard let checkingText = symbolTextField.text else { return }
     isEmoji = checkingText.unicodeScalars.allSatisfy({$0.properties.isEmoji})
@@ -43,6 +36,7 @@ class AddEditTableViewController: UITableViewController {
     print("\(isContainingOther)")
   }
 
+
   private func saveEmoji() {
     emoji.symbol = symbolTextField.text ?? ""
     emoji.name = nameTextField.text ?? ""
@@ -50,7 +44,7 @@ class AddEditTableViewController: UITableViewController {
     emoji.usage = usageTextField.text ?? ""
   }
 
-  func textFieldWarcher(){
+  private func textFieldWarcher(){
     symbolTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
     nameTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
     descriptionTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
@@ -68,6 +62,13 @@ class AddEditTableViewController: UITableViewController {
         saveBarButton.isEnabled = false
       }
     }
+  }
+
+  private func updateUI() {
+    symbolTextField.text = emoji.symbol
+    nameTextField.text = emoji.name
+    descriptionTextField.text = emoji.descriotion
+    usageTextField.text = emoji.usage
   }
 
   //MARK: - Navigation
