@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Emoji {
+struct Emoji: Codable {
   var symbol: String
   var name: String
   var descriotion: String
@@ -35,9 +35,6 @@ Emoji(symbol: "🐯", name: "Тигр", description: "Просто тигр", us
 Emoji(symbol: "🎋", name: "Дерево Танабата", description: "Дерево, к которому в разных религиях прикрепляют добрые пожелания", usage: "Пожелать чего-то хорошего оригинально"),
 Emoji(symbol: "🎍", name: "Кадомацу", description: "Кадомацу — японское украшение, которое делается из бамбука или сосны", usage: "Поздравляете японца с Новым Годом!"),
     ]
-  }
-  static func loadAll() -> [Emoji]? {
-return nil
   }
 
   static func loadDefaults() -> [Emoji] {

@@ -11,16 +11,22 @@ class EmojiTableViewController: UITableViewController {
 
   // MARK: - Properties
   let cellManager = CellManager()
-  var emojis: [Emoji]!
+  let dataManager = DataManager()
+  var emojis: [Emoji]! {
+    didSet {
+      dataManager.saveEmojis(emojis)
+    }
+  }
 
 
   // MARK: - UIViewController Methods
   override func viewDidLoad() {
     super.viewDidLoad()
-    emojis = Emoji.loadAll() ?? Emoji.loadDefaults()
+    emojis = dataManager.loadEmojis() ?? Emoji.loadDefaults()
     navigationItem.leftBarButtonItem = editButtonItem
   }
-//MARK: - Navigator
+
+  //MARK: - Navigator
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard segue.identifier == "EditSegue" else { return }
     guard let selectedPath = tableView.indexPathForSelectedRow else{ return }
@@ -29,6 +35,7 @@ class EmojiTableViewController: UITableViewController {
     destination.emoji = emoji
   }
 }
+
 // MARK: - UITableViewDataSourse
 extension EmojiTableViewController /* UITableViewDataSourse */ {
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
