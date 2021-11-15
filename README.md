@@ -21,3 +21,5 @@ A check for the entered values has been added to the SYMBOL field, so the user c
 ![Screenshot004](https://github.com/ClearCut3000/TableView/blob/main/Screenshots/scr004.png?raw=true)
 ![Screenshot005](https://github.com/ClearCut3000/TableView/blob/main/Screenshots/scr005.png?raw=true)
 
+The text unsaved by the user is restored after the application is restarted. 
+(In a situation where the user could not complete editing due to the phone being turned off).
