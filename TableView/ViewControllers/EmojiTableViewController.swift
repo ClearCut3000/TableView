@@ -81,6 +81,8 @@ extension EmojiTableViewController /*: UITableViewDelegate */ {
 //MARK: - Actions
 extension EmojiTableViewController {
   @IBAction func unwind(_ segue: UIStoryboardSegue) {
+    UserDefaults.resetStandardUserDefaults()
+    UserDefaults.standard.synchronize()
     guard segue.identifier == "saveSegue" else { return }
     let source = segue.source as! AddEditTableViewController
     let emoji = source.emoji

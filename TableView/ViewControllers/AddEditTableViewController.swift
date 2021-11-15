@@ -42,6 +42,11 @@ class AddEditTableViewController: UITableViewController {
     emoji.name = nameTextField.text ?? ""
     emoji.descriotion = descriptionTextField.text ?? ""
     emoji.usage = usageTextField.text ?? ""
+    UserDefaults.standard.removeObject(forKey: "name")
+    UserDefaults.standard.removeObject(forKey: "symbol")
+    UserDefaults.standard.removeObject(forKey: "usage")
+    UserDefaults.standard.removeObject(forKey: "description")
+    UserDefaults.standard.synchronize()
   }
 
   private func textFieldWarcher(){
@@ -51,7 +56,16 @@ class AddEditTableViewController: UITableViewController {
     usageTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
   }
 
+  func storingUnsaved(){
+    UserDefaults.standard.set(symbolTextField.text, forKey: "symbol")
+    UserDefaults.standard.set(nameTextField.text, forKey: "name")
+    UserDefaults.standard.set(descriptionTextField.text, forKey: "description")
+    UserDefaults.standard.set(usageTextField.text, forKey: "usege")
+  }
+
   @objc func textFieldDidChange(_ textField: UITextField){
+    storingUnsaved()
+    print(UserDefaults.standard.self)
     if symbolTextField.text!.isEmpty || nameTextField.text!.isEmpty || descriptionTextField.text!.isEmpty || usageTextField.text!.isEmpty {
       saveBarButton.isEnabled = false
     } else {
@@ -65,10 +79,34 @@ class AddEditTableViewController: UITableViewController {
   }
 
   private func updateUI() {
-    symbolTextField.text = emoji.symbol
-    nameTextField.text = emoji.name
-    descriptionTextField.text = emoji.descriotion
-    usageTextField.text = emoji.usage
+    if emoji.symbol != "" {
+      symbolTextField.text = emoji.symbol
+    } else {
+      if let symbol = UserDefaults.standard.object(forKey: "symbol") as? String {
+        symbolTextField.text = symbol
+      } else { symbolTextField.text = emoji.symbol }
+    }
+    if emoji.name != "" {
+      nameTextField.text = emoji.name
+    } else {
+      if let text = UserDefaults.standard.object(forKey: "name") as? String {
+        nameTextField.text = text
+      } else { nameTextField.text = emoji.name }
+    }
+    if emoji.descriotion != "" {
+      descriptionTextField.text = emoji.descriotion
+    } else {
+      if let description = UserDefaults.standard.object(forKey: "description") as? String {
+        descriptionTextField.text = description
+      } else { descriptionTextField.text = emoji.descriotion }
+    }
+    if emoji.usage != "" {
+      usageTextField.text = emoji.usage
+    } else {
+      if let usage = UserDefaults.standard.object(forKey: "usage") as? String {
+        usageTextField.text = usage
+      } else { usageTextField.text = emoji.usage}
+    }
   }
 
   //MARK: - Navigation
